@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.env
+.venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and OS specific
+.vscode/
+.idea/
+*.DS_Store
+
+Therapist_Training_Evaluation.zip
