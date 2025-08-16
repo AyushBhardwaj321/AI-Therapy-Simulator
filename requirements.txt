@@ -2,3 +2,5 @@ openai
 streamlit
 google-generativeai
 streamlit-autorefresh
+Werkzeug
+SQLAlchemy
