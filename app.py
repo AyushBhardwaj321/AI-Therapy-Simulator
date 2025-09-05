@@ -364,14 +364,15 @@ def therapist_dashboard():
                 with col4:
                     if st.button("Review Evaluations", key=f"review_{series['id']}"): st.session_state.review_series_id = series['id']; st.rerun()
     st.subheader("2. Start a New Session Series")
-    available_llms = get_available_llms()
-    if not available_llms:
-        st.error("No LLM provider secrets found."); st.stop()
-    display_names = list(available_llms.keys())
-    llm_choice = st.radio("Select AI Provider:", options=display_names, horizontal=True, key="llm_select_new")
+    # available_llms = get_available_llms()
+    # if not available_llms:
+    #     st.error("No LLM provider secrets found."); st.stop()
+    # display_names = list(available_llms.keys())
+    # llm_choice = st.radio("Select AI Provider:", options=display_names, horizontal=True, key="llm_select_new")
+    provider_key = "gemini"
     patient_key = st.selectbox("Select Patient:", options=list(PATIENT_PROFILES.keys()), format_func=lambda k: PATIENT_PROFILES[k]['name'])
     if st.button("Start New Session Series", type="primary"):
-        provider_key = available_llms[llm_choice]
+        # provider_key = available_llms[llm_choice]
         series_id = database.start_new_therapy_series(st.session_state.user['id'], patient_key, provider_key)
         st.session_state.series_id = series_id
         st.rerun()
