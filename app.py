@@ -182,7 +182,7 @@ def initialize_llm_client():
         try:
             genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
             st.session_state.llm_client = "gemini_configured"
-            st.session_state.llm_model_name = "gemini-1.5-flash-latest"
+            st.session_state.llm_model_name = "gemini-1.5-flash"
         except Exception as e:
             st.error(f"Failed to initialize Gemini: {e}. Check your GEMINI_API_KEY."); st.stop()
 
